@@ -1,1 +1,3 @@
-Repozitar urceny pre ulohy z predmetu "Webove technologie a dizajn"
+**Repozitár určený pre úlohy z predmetu "Webové technológie a dizajn".**
+
+**Ročník: _Prvý_ **
