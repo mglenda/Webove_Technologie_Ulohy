@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'HeaderFont'; /*a name to be used later*/
+    src: url('Fonts/BreatheFireIii-PKLOB.ttf'); /*URL to font*/
+}
+
+.header-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.0em;
+}
+
+.title {
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 4.0em;
+    font-family: 'HeaderFont';
+    flex-grow: 1;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('Graphics/MainBackground.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3.0em;
+    margin-top: 10.0em;
+}
+
+.container-centered > * {
+    margin-right: 10.0em; 
+}
+
+.container-centered > *:last-child {
+    margin-right: 0;
+}
+
+.logo{
+    cursor:pointer;
+    border:none;
+    background-size: contain;
+    padding: 3.0em;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+    background: url('Graphics/Logo.png'); /* Image for normal state */
+    background-size: contain;
+}
+
+.logo:hover {
+    background: url('Graphics/Logo.png'); /* Image for hover state */
+    background-size: contain;
+    transform: scale(1.1);
+}
+
+.quiz_btn {
+    cursor:pointer;
+    border:none;
+    background-size: contain;
+    padding: 10.0em;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+}
+
+.quiz_btn-cities {
+    background: url('Graphics/CitiesNormal.png');
+    background-size: contain;
+}
+
+.quiz_btn-cities:hover {
+    background: url('Graphics/CitiesHovered.png');
+    background-size: contain;
+    transform: scale(1.1);
+}
+
+.quiz_btn-computers {
+    background: url('Graphics/ComputersNormal.png');
+    background-size: contain;
+}
+
+.quiz_btn-computers:hover {
+    background: url('Graphics/ComputersHovered.png');
+    background-size: contain;
+    transform: scale(1.1);
+}
+
+.quiz_btn-history {
+    background: url('Graphics/HistoryNormal.png');
+    background-size: contain;
+}
+
+.quiz_btn-history:hover {
+    background: url('Graphics/HistoryHovered.png');
+    background-size: contain;
+    transform: scale(1.1);
+}
