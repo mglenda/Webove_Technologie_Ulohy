@@ -10,6 +10,17 @@
     padding: 1.0em;
 }
 
+.score-box{
+    max-width:3.0em;
+    height: auto;
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 3.0em;
+    font-family: 'HeaderFont';
+    flex-grow: 1;
+    text-align: center;
+}
+
 .title {
     font-weight: bold;
     color: #fafafa;
@@ -43,6 +54,85 @@ body {
 
 .container-centered > *:last-child {
     margin-right: 0;
+}
+
+.container-centered-quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    margin-top: 6.0em;
+    padding: 1.0em;
+}
+
+.container-centered-quiz > * {
+    margin-left: -3.0em; 
+}
+
+.container-centered-quiz > *:last-child {
+    margin-left: 3.0em;
+}
+
+.container-centered-quiz-answers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
+    padding: 1.0em;
+}
+
+.container-centered-quiz-answers > * {
+    margin-right: 10.0em; 
+}
+
+.container-centered-quiz-answers > *:last-child {
+    margin-right: 0;
+}
+
+.quiz-question{
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 1.7em;
+    font-family: 'Georgia';
+    flex-grow: 1;
+    text-align: center;
+    max-width: 20.0em;
+    max-height: 10.0em;
+}
+
+.quiz-question-image{
+    border:none;
+    background-size: contain;
+    padding: 8.0em;
+    background: url('Graphics/HistoryHovered.png'); /* Image for normal state */
+    background-size: contain;
+}
+
+.quiz-answer-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 2.0em;
+    font-family: 'HeaderFont';
+    cursor:pointer;
+    border:none;
+    background-size: contain;
+    width: 12.0em;
+    height: 4.0em;
+    background: url('Graphics/OptionButton.png');
+    background-size: contain;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+}
+
+.quiz-answer-btn:hover{
+    background: url('Graphics/OptionButtonHovered.png');
+    background-size: contain;
+}
+
+.disable-hover {
+    pointer-events: none;
 }
 
 .logo{

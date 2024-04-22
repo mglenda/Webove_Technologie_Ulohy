@@ -1,0 +1,52 @@
+{"cities":
+    [
+		{
+			"question":"What is the capital city of 'France' ?"
+			,"options":["Bern","Amsterdam","Paris","Marseille"]
+			,"image":"Paris.png"
+			,"answer":2
+			,"info":"Paris is the capital and most populous city of 'France'. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy."
+		}
+		,{
+			"question":"What is the most populated city in the world ?"
+			,"options":["Tokyo","Delhi","Shanghai","Mexico City"]
+			,"image":"Tokyo.png"
+			,"answer":0
+			,"info":"Tokyo, Japan, is the largest city on Earth, with a population of 37.4 million people, which is over four times the population of New York City, USA."
+		}
+	]
+,"history":
+    [
+		{
+			"question":"What is the capital city of 'France' ?"
+			,"options":["Bern","Amsterdam","Paris","Marseille"]
+			,"image":"Paris.png"
+			,"answer":2
+			,"info":"Paris is the capital and most populous city of 'France'. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy."
+		}
+		,{
+			"question":"What is the most populated city in the world ?"
+			,"options":["Tokyo","Delhi","Shanghai","Mexico City"]
+			,"image":"Tokyo.png"
+			,"answer":0
+			,"info":"Tokyo, Japan, is the largest city on Earth, with a population of 37.4 million people, which is over four times the population of New York City, USA."
+		}
+	]
+,"computers":
+    [
+		{
+			"question":"What is the capital city of 'France' ?"
+			,"options":["Bern","Amsterdam","Paris","Marseille"]
+			,"image":"Paris.png"
+			,"answer":2
+			,"info":"Paris is the capital and most populous city of 'France'. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy."
+		}
+		,{
+			"question":"What is the most populated city in the world ?"
+			,"options":["Tokyo","Delhi","Shanghai","Mexico City"]
+			,"image":"Tokyo.png"
+			,"answer":0
+			,"info":"Tokyo, Japan, is the largest city on Earth, with a population of 37.4 million people, which is over four times the population of New York City, USA."
+		}
+	]
+}
