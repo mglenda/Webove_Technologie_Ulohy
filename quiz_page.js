@@ -4,6 +4,7 @@ var correct_answers = 0;
 var question_timer = null;
 const question_timeout = 15;
 var time = question_timeout;
+var total_time = 0;
 
 /*Json na storovanie textovych animacii elementov, aby sa pri vytvarani novej animacie stara znicila pokial este stale bezi.*/
 var text_anims = {};
@@ -74,11 +75,10 @@ function start_timer(){
 }
 
 function timer_tick(){
-    if(--time > 0){
-
-    }else{
+    if(--time <= 0){
         end_timer();
     }
+    total_time++;
     refresh_time();
 }
 
@@ -103,8 +103,31 @@ function load_next_question(){
         wheel.classList.add('disable-hover');
         start_timer();
     }else{
-        window.location.href = 'main_page.html';
+        sessionStorage.setItem('correctAnswers',correct_answers);
+        sessionStorage.setItem('totalAnswers',current_question);
+        sessionStorage.setItem('totalTime',total_time);
+
+        if(sessionStorage.getItem('nickName')){
+            store_data();
+            return;
+        }
+        window.location.href = 'result_page.html';
     }
+}
+
+function store_data(){
+    var quiz_type = sessionStorage.getItem('quizType');
+    var data = JSON.parse(sessionStorage.getItem('scoreData'));
+
+    data[quiz_type].push({
+        "nickname": sessionStorage.getItem('nickName')
+        ,"correct_answers": Number(correct_answers)
+        ,"total_answers": Number(current_question)
+        ,"total_time": Number(total_time)
+    });
+
+    sessionStorage.setItem('scoreData',JSON.stringify(data));
+    window.location.href = 'score_page.html';
 }
 
 function end_timer(){

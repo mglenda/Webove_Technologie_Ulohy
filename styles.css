@@ -13,13 +13,6 @@ body {
     background-size: cover;
 }
 
-.header-panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.0em;
-}
-
 .title {
     font-weight: bold;
     color: #fafafa;
@@ -28,22 +21,26 @@ body {
     flex-grow: 1;
     text-align: center;
     pointer-events: none;
+    margin-top: 1%;
 }
 
 .logo{
     cursor:pointer;
     border:none;
-    background-size: contain;
-    padding: 3.0em;
-    transition: background-image 0.3s ease, transform 0.3s ease;
     background: url('Graphics/Logo.png'); /* Image for normal state */
     background-size: contain;
+    width: 100px;
+    height: 100px;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 1%;
+    left: 1%;
 }
 
 .logo:hover {
     background: url('Graphics/Logo.png'); /* Image for hover state */
-    background-size: contain;
     transform: scale(1.1);
+    background-size: contain;
 }
 
 .disable-hover {

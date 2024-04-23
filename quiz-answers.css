@@ -1,13 +1,13 @@
 .score-box{
-    max-width:3.0em;
-    height: auto;
+    position: absolute;
     font-weight: bold;
     color: #fafafa;
     font-size: 3.0em;
     font-family: 'HeaderFont';
-    flex-grow: 1;
     text-align: center;
     pointer-events: none;
+    top: 4%;
+    right: 2%;
 }
 
 .quiz-answers-container {

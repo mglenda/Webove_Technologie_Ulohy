@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Result</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="result-page.css">
+    </head>
+    <body>
+        <a href="main_page.html">
+            <div class="logo"></div>
+        </a>
+        <div class="title">Result</div>
+        <div class="result-items">
+            <div class="caption">Nickname:</div>
+            <input type="text" class="text-input" id="nickname" placeholder="(5-15 characters)">
+
+            <div class="caption">Email:</div>
+            <input type="text" class="text-input" id="email">
+
+            <div class="gender-cont">
+                <div class="caption gender_txt">Male:</div>
+                <input type="radio" class="gender-btn" id="male" name="gender" value="male">
+                <div class="caption gender_txt">Female:</div>
+                <input type="radio" class="gender-btn" id="female" name="gender" value="female">
+            </div>
+
+            <div class="caption">Birthday:</div>
+            <input type="date" class="date-input" id="birthday">
+
+            <div class="gender-cont">
+                <div class="caption gender_txt">I am not a robot:</div>
+                <input type="checkbox" class="gender-btn" id="robot" name="robotcheck">
+            </div>
+
+            <div class="caption error_txt" id="error"></div>
+        </div>
+        <div class="submit-btn" id="submit">Submit</div>
+        <script src="result_page.js"></script>
+    </body>
+</html>

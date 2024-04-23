@@ -30,12 +30,29 @@ function on_load() {
         .catch(error => {
             console.error("Error loading JSON file:", error);
         });
+
+    fetch("Data/QuizScore.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(json => load_score(json))
+        .catch(error => {
+            console.error("Error loading JSON file:", error);
+        });
 }
 
 document.addEventListener('DOMContentLoaded', on_load);
 
+function load_score(json){
+    if(!sessionStorage.getItem('scoreData')){
+        sessionStorage.setItem('scoreData', JSON.stringify(json));
+    }
+}
+
 function load_data(json){
-    console.log(json);
     sessionStorage.setItem('quizData', JSON.stringify(json));
 
     for(quiz_name in json){
