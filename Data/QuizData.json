@@ -2,9 +2,9 @@
     [
 		{
 			"question":"What is the capital city of 'France' ?"
-			,"options":["Bern","Amsterdam","Paris","Marseille"]
+			,"options":["Bern","Paris","Amsterdam","Marseille"]
 			,"image":"Paris.png"
-			,"answer":2
+			,"answer":1
 			,"info":"Paris is the capital and most populous city of 'France'. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy."
 		}
 		,{

@@ -1,0 +1,32 @@
+.container-centered-quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    margin-top: 4.0em;
+    margin-bottom: 4.0em;
+    margin-left: 14.0em;
+    margin-right: 14.0em;
+    border-radius: 4em 4em 4em 4em;
+}
+
+.quiz-question{
+    color: #fafafa;
+    font-size: 2em;
+    font-family: 'HeaderFont';
+    flex-grow: 1;
+    text-align: center;
+    max-width: 24.0em;
+    max-height: 10.0em;
+    pointer-events: none;
+}
+
+.quiz-question-image{
+    height: 18.0em;
+    width: 18.0em;
+    background: url('Graphics/HistoryHovered.png'); /* Image for normal state */
+    background-size: contain;
+    margin-left: 4.0em;
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+}

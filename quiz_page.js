@@ -1,28 +1,52 @@
 var quiz_data = null;
 var current_question = -1;
 var correct_answers = 0;
+var question_timer = null;
+const question_timeout = 15;
+var time = question_timeout;
+
+/*Json na storovanie textovych animacii elementov, aby sa pri vytvarani novej animacie stara znicila pokial este stale bezi.*/
+var text_anims = {};
+
+function get_name(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function refresh_score(){
+    var score = document.getElementById('score');
+    score.textContent = correct_answers + ' / ' + quiz_data.length;
+}
+
+function refresh_time(){
+    var text = document.getElementById('timer');
+    text.textContent = time;
+
+    var wheel = document.getElementById('wheel');
+
+    if (typeof time === 'number'){
+        var hue = Math.round((time / question_timeout) * 105);
+        wheel.style.setProperty('--hue',hue);
+        text.style.setProperty('--hue',hue);
+    }
+}
 
 function on_load() {
     var caption = document.getElementById("caption");
     var quizType = sessionStorage.getItem('quizType');
-    caption.textContent = quizType.charAt(0).toUpperCase() + quizType.slice(1);
-    document.title = quizType.charAt(0).toUpperCase() + quizType.slice(1);
-
-    //AJAX call, nacitavanie dat z .json suboru
-    fetch("Data/QuizData.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(data => load_quiz(data))
-        .catch(error => {
-            console.error("Error loading JSON file:", error);
-        });
+    quiz_data = JSON.parse(sessionStorage.getItem('quizData'))[quizType];
+    caption.textContent = get_name(quizType);
+    document.title = get_name(quizType);
+    document.getElementById("wheel").addEventListener('mouseup',load_next_question);
+    refresh_score();
+    load_next_question();
 }
 
+document.addEventListener('DOMContentLoaded', on_load);
+
 function animate_text(element,text){
+    if (text_anims.hasOwnProperty(element)){
+        clearInterval(text_anims[element]);
+    }
     element.textContent = "";
     var index = 0;
     var interval = setInterval(function() {
@@ -30,21 +54,41 @@ function animate_text(element,text){
         index++;
         if (index >= text.length) {
             clearInterval(interval);
+            text_anims[element] = null;
         }
     }, 15);
+    text_anims[element] = interval;
 }
 
-function load_quiz(data){
-    quiz_data = data[sessionStorage.getItem('quizType')];
-    refresh_score();
-    load_next_question();
+function stop_timer(){
+    if (question_timer != null){
+        clearInterval(question_timer);
+    }
+}
+
+function start_timer(){
+    time = question_timeout;
+    refresh_time();
+    stop_timer();
+    question_timer = setInterval(timer_tick,1000);
+}
+
+function timer_tick(){
+    if(--time > 0){
+
+    }else{
+        end_timer();
+    }
+    refresh_time();
 }
 
 function load_next_question(){
     if (quiz_data != null && ++current_question < quiz_data.length){
         for(var i = 0; i < 4; i++){
-            document.getElementById(i).addEventListener('mouseup',option_click);
-            document.getElementById(i).classList.remove('disable-hover');
+            var element = document.getElementById(i);
+            element.addEventListener('mouseup',option_click);
+            element.style.setProperty('--img',"url('Graphics/OptionButton.png')")
+            element.classList.remove('disable-hover');
         }
         animate_text(document.getElementById("questionText"),quiz_data[current_question].question);
         document.getElementById('questionImage').style.backgroundImage = "url('Graphics/" + quiz_data[current_question].image + "')";
@@ -53,27 +97,38 @@ function load_next_question(){
         for (var i = 0; i < options.length; i++) {
             document.getElementById(i).textContent = options[i];
         }
+
+        var wheel = document.getElementById("wheel");
+        wheel.style.animation = 'loading-animation 1.2s linear infinite';
+        wheel.classList.add('disable-hover');
+        start_timer();
+    }else{
+        window.location.href = 'main_page.html';
     }
 }
 
-function option_click(event){
-    for(var i = 0; i < 4; i++){
+function end_timer(){
+    stop_timer();
+    for(let i = 0; i < 4; i++){
         var element = document.getElementById(i);
         element.removeEventListener('mouseup',option_click);
         element.classList.add('disable-hover');
-        console.log(quiz_data[current_question].answer);
-        element.style.backgroundImage = i == quiz_data[current_question].answer ? "url('Graphics/OptionButtonCorrect.png')" : "url('Graphics/OptionButtonWrong.png')";
+        element.style.setProperty('--img',i == quiz_data[current_question].answer ? "url('Graphics/OptionButtonCorrect.png')" : "url('Graphics/OptionButtonWrong.png')");
     }
     animate_text(document.getElementById("questionText"),quiz_data[current_question].info);
+
+    var wheel = document.getElementById("wheel");
+    wheel.style.animation = 'none';
+    wheel.classList.remove('disable-hover');
+
+    time = (current_question + 1) < quiz_data.length ? 'Next' : 'End';
+    refresh_time();
+}
+
+function option_click(event){
+    end_timer();
     if(parseInt(event.target.id,10) == quiz_data[current_question].answer){
         correct_answers++;
         refresh_score();
     }
 }
-
-function refresh_score(){
-    var score = document.getElementById('score');
-    score.textContent = correct_answers + ' / ' + quiz_data.length;
-}
-
-document.addEventListener('DOMContentLoaded', on_load);
