@@ -10,4 +10,13 @@
 
 **Front-End Skill:  _toto je môj prvý projekt_**
 
-**Pre úspešné spustenie webu je potrebné spúšťať aspoň na localhoste, inak je dosť možné, že AJAX call neprejde cez (CORS), prípadne inú browser security, pri snahe prečítať dáta z lokalného súboru.**
+**___________________________**
+**Ako spustiť tento projekt ?**
+
+
+**_1:_ Stránku je potrebné zbiehať nad localhostom, alebo inou formou hostovania. Nakoľko sú v nej použité AJAX cally a tie s veľkou pravdepodobnosťou neprejdú cez browser (CORS) policy v prípade otvorenia priamo z priečinka.**
+
+**_2:_ Úvodná stránka je "main_page.html". Tú je potrebné otvoriť ako prvú, nakoľko pri jej otvorení dôjde k načítaniu potrebných dát do sessionStoragu.**
+
+
+**Mimo týchto korkov, už nie je potrebné robiť nič. Nakoľko išlo o môj prvý "web" projekt v živote snažil som sa vyhýbať knižniciam a frameworkom. Podstatou bolo zoznámiť sa s "vanilla" koncepciou HTML/CSS/JS.**
