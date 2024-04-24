@@ -10,7 +10,7 @@
 
 **___________________________**
 **Ako spustiť tento projekt ?**
-
+**___________________________**
 
 **_1:_ Stránku je potrebné zbiehať nad localhostom, alebo inou formou hostovania. Nakoľko sú v nej použité AJAX cally a tie s veľkou pravdepodobnosťou neprejdú cez browser (CORS) policy v prípade otvorenia priamo z priečinka. Ja osobne som na tento účel používal tento extension do VSCodu https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server**
 
