@@ -17,8 +17,8 @@ function on_mouse_out(event){
     event.target.style.backgroundImage = "url('Graphics/" + name + "Normal.png')";
 }
 
+/*Pri spusteni stranky sa AJAXOM nacitavaju data o kvizoch a tiez data o skore, kedze pracujem len na front-ende data o skore.*/
 function on_load() {
-    //AJAX call, nacitavanie dat z .json suboru
     fetch("Data/QuizData.json")
         .then(response => {
             if (!response.ok) {
@@ -52,6 +52,9 @@ function load_score(json){
     }
 }
 
+/*Tu si data o kvizoch ulozim aj do sessionStorage nakolko ich budem vyuzivat aj v dalsich castiach webu. Nasledne loopujem cez vsetky vrchne kluce JSONU a vytvaram k nim kviz_div. Tlacidlo s obrazkom a nadpisom. 
+  Taketo dynamicke nacitavanie zabezpecuje, ze v pripade potreby pridania noveho ci odobratia stareho kvizu, staci zeditovat vstupny .json subor a nemusi sa vobec zasahovat do kodu.
+*/
 function load_data(json){
     sessionStorage.setItem('quizData', JSON.stringify(json));
 
@@ -61,6 +64,7 @@ function load_data(json){
     }
 }
 
+/*Vytvorenie quiz_divu.*/
 function create_quiz_div(quiz_name){
     var container = document.getElementById("quizContainer");
 

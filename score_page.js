@@ -2,6 +2,7 @@ function get_name(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+/*Pri spusteni stranky sa nacitaju data o skore z jsonu a vytvoria sa riadky/bunky tabulky.*/
 function on_load(){
     var data = JSON.parse(sessionStorage.getItem('scoreData'));
     var t_body = document.getElementById('table-body');

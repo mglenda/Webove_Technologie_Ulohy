@@ -18,6 +18,7 @@ function refresh_score(){
     score.textContent = correct_answers + ' / ' + quiz_data.length;
 }
 
+/*Funkcia na refresh hodnoty casu v nacitavacom kruhu. Tiez podla uplynuteho casu vyhodnocujem zmenu farby nacitavacieho kruhu. (Zacina ako zelena a meni sa na cervenu ako dochadza cas na odpoved)*/
 function refresh_time(){
     var text = document.getElementById('timer');
     text.textContent = time;
@@ -31,6 +32,7 @@ function refresh_time(){
     }
 }
 
+/*Funkcia, ktora sa vola po nacitani stranky. Priprava prostredia pre kviz.*/
 function on_load() {
     var caption = document.getElementById("caption");
     var quizType = sessionStorage.getItem('quizType');
@@ -44,6 +46,7 @@ function on_load() {
 
 document.addEventListener('DOMContentLoaded', on_load);
 
+/*Funkcia, ktora do elementu vypise text po jednom znaku kazdych 15 milisekund. V podstate ista forma animacie, ide len o vizual.*/
 function animate_text(element,text){
     if (text_anims.hasOwnProperty(element)){
         clearInterval(text_anims[element]);
@@ -82,6 +85,7 @@ function timer_tick(){
     refresh_time();
 }
 
+/*Nacitavanie novej kvizovej otazky z ulozenych dat.*/
 function load_next_question(){
     if (quiz_data != null && ++current_question < quiz_data.length){
         for(var i = 0; i < 4; i++){
@@ -103,6 +107,7 @@ function load_next_question(){
         wheel.classList.add('disable-hover');
         start_timer();
     }else{
+        /*Ak uz prebehla posledna otazka kvizu tak ukladam do sessionStorage vysledky a prechadzam na result_page, pripadne ak uz bol zadany uzivatel tak ukladam data a prechadzam na score_page.*/
         sessionStorage.setItem('correctAnswers',correct_answers);
         sessionStorage.setItem('totalAnswers',current_question);
         sessionStorage.setItem('totalTime',total_time);
@@ -114,6 +119,7 @@ function load_next_question(){
         window.location.href = 'result_page.html';
     }
 }
+
 
 function store_data(){
     var quiz_type = sessionStorage.getItem('quizType');
@@ -130,6 +136,7 @@ function store_data(){
     window.location.href = 'score_page.html';
 }
 
+/*Funkcia, ktora sa vola ked uzivatel nestihne zodpovedat otazku v case, alebo ked zaklikne jednu z odpovedi. Deaktivuju sa tlacidla s moznostami, aktivuje sa nacitavaci kruh tak aby sa nan dalo kliknut a tym prejst na dalsiu otazku.*/
 function end_timer(){
     stop_timer();
     for(let i = 0; i < 4; i++){
@@ -147,7 +154,7 @@ function end_timer(){
     time = (current_question + 1) < quiz_data.length ? 'Next' : 'End';
     refresh_time();
 }
-
+/*Vyber jednej z odpovedi, vyhodnocovanie spravnosti odpovede.*/
 function option_click(event){
     end_timer();
     if(parseInt(event.target.id,10) == quiz_data[current_question].answer){

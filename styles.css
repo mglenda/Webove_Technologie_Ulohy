@@ -1,3 +1,4 @@
+/*Main content*/
 @font-face {
     font-family: 'HeaderFont'; /*a name to be used later*/
     src: url('Fonts/BreatheFireIii-PKLOB.ttf'); /*URL to font*/
@@ -44,5 +45,308 @@ body {
 }
 
 .disable-hover {
+    pointer-events: none;
+}
+
+
+/*Quiz-answers*/
+.score-box{
+    position: absolute;
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 3.0em;
+    font-family: 'HeaderFont';
+    text-align: center;
+    pointer-events: none;
+    top: 4%;
+    right: 2%;
+}
+
+.quiz-answers-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+}
+
+.quiz-answers-column {
+    align-items: center;
+    justify-content: center;
+    padding: 2.0em;
+}
+
+.quiz-answer-button{
+    --img: url('Graphics/OptionButton.png');
+    display: flex;
+    background: var(--img);
+    background-size: contain;
+    cursor:pointer;
+    width: 12.0em;
+    height: 4.0em;
+    margin: 1.0em;
+    border: none;
+    color: #fafafa;
+    font-size: 2.0em;
+    font-family: 'HeaderFont';
+    justify-content: center;
+    align-items: center;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+}
+
+.quiz-answer-button:hover{
+    background: url('Graphics/OptionButtonHovered.png');
+    background-size: contain;
+}
+
+.quiz-timer{
+    position: relative;
+    display: inline-block;
+}
+
+.quiz-loading-wheel {
+    --hue: 105;
+    width: 8.0em;
+    height: 8.0em;
+    background-color: hsl(var(--hue), 86%, 30%);
+    border: 0.4em solid hsl(0, 0%, 95%);
+    border-top: 0.4em solid hsl(var(--hue), 79%, 17%);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 1.0s ease, transform 0.3s ease;
+    animation: loading-animation 1.4s linear infinite;
+}
+
+.quiz-loading-wheel:hover{
+    transform: scale(1.1);
+}
+
+.quiz-loading-text{
+    --hue: 105;
+    position: absolute;
+    color: hsl(var(--hue), 80%, 12%);
+    font-size: 2.0em;
+    font-family: 'HeaderFont';
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+@keyframes loading-animation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/*Quiz-menu*/
+
+.quiz-menu-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-column: auto;
+    margin-top: 5em;
+    grid-template-columns: auto auto auto;
+}
+
+.quiz-menu-item{
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+
+.quiz-btn {
+    cursor:pointer;
+    border: none;
+    width: 20em;
+    height: 20em;
+    background: url('Graphics/CitiesNormal.png');
+    background-size: contain;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+    margin-right: 8em;
+    margin-left: 8em;
+}
+
+.quiz-caption{
+    color: #ffd700;
+    font-size: 2.0em;
+    font-family: 'HeaderFont';
+    text-align: center;
+    margin-bottom: 0.8em;
+    pointer-events: none;
+}
+
+
+/*Quiz-question*/
+
+.container-centered-quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    margin-top: 4.0em;
+    margin-bottom: 4.0em;
+    margin-left: 14.0em;
+    margin-right: 14.0em;
+    border-radius: 4em 4em 4em 4em;
+}
+
+.quiz-question{
+    color: #fafafa;
+    font-size: 2em;
+    font-family: 'HeaderFont';
+    flex-grow: 1;
+    text-align: center;
+    max-width: 24.0em;
+    max-height: 10.0em;
+    pointer-events: none;
+}
+
+.quiz-question-image{
+    height: 18.0em;
+    width: 18.0em;
+    background: url('Graphics/HistoryHovered.png'); /* Image for normal state */
+    background-size: contain;
+    margin-left: 4.0em;
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+}
+
+
+/*Result-page*/
+
+.result-items {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.text-input {
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: 4px solid;
+    height: 1.8em;
+    width: 20em;
+}
+
+.text-input:focus{
+    border-color: darkgreen;
+}
+
+.caption{
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+    max-width: 20.0em;
+    max-height: 2.5em;
+    font-size: 1.5em;
+    color: rgb(255, 215, 0);
+    margin-top: 2em;
+    pointer-events: none;
+}
+
+.gender_txt{
+    margin-top: 0;
+    font-size: 1.2em;
+    margin-right: 1em;
+}
+
+.error_txt{
+    margin-top: 4em;
+    font-size: 1.2em;
+    color: red;
+}
+
+.gender-cont{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 3em;
+}
+
+.gender-btn{
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 3em;
+}
+
+.date-input{
+    height: 1.5em;
+    font-family: 'Lucida Sans';
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: 4px solid;
+}
+
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: url('Graphics/SubmitButton.png');
+    background-size: contain;
+    transition: background-image 0.3s ease;
+    bottom: 2em;
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+    font-size: 2.0em;
+    color: #ffffff;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 12em;    
+    height: 3em;
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    background: url('Graphics/SubmitButtonHovered.png');
+    background-size: contain;
+}
+
+
+/*Score-page*/
+
+.score-cont {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+#data-table {
+    width: 100%;
+    margin-top: 4em;
+    border: 6px;
+    border-style: groove;
+    border-color: black;
+    border-radius: 10px;
+}
+
+#data-table th {
+    width: 10em;
+    height: 2em;
+    font-family: 'HeaderFont';
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(255, 215, 0);
+    background-color: rgb(56, 55, 55);
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: white;
+    pointer-events: none;
+}
+
+#data-table td {
+    width: 10em;
+    height: 2em;
+    font-family: 'HeaderFont';
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: white;
     pointer-events: none;
 }

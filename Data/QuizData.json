@@ -14,39 +14,102 @@
 			,"answer":0
 			,"info":"Tokyo, Japan, is the largest city on Earth, with a population of 37.4 million people, which is over four times the population of New York City, USA."
 		}
+		,{
+			"question":"What is the the wealthiest city per capita in the world ?"
+			,"options":["Los Angeles","Beijing","Singapore","New York"]
+			,"image":"NewYork.png"
+			,"answer":3
+			,"info":"The Big Apple is home to 340,000 millionaires, 724 centi-millionaires, and 58 billionaires. It is the financial center of the USA and the wealthiest city in the world by several measures."
+		}
+		,{
+			"question":"What is the oldest city in the world, which is still populated ?"
+			,"options":["Jerusalem","Rome","Damascus","Argus"]
+			,"image":"Damascus.png"
+			,"answer":2
+			,"info":"Damascus and its surroundings have been inhabited for at least 10,000 years. This gives Damascus the title of being frequently named as the oldest continuously inhabited city in the world."
+		}
+		,{
+			"question":"What is safest city in the world ?"
+			,"options":["Bern","Abu Dhabi","Quebec City","Dubai"]
+			,"image":"AbuDhabi.png"
+			,"answer":1
+			,"info":"Abu Dhabi has been ranked as the world’s safest city for 2024, according to CEOWORLD magazine. The UAE capital has topped the list of 300 cities with an overall safety score of 97.73."
+		}
 	]
 ,"history":
     [
 		{
-			"question":"What is the capital city of 'France' ?"
-			,"options":["Bern","Amsterdam","Paris","Marseille"]
-			,"image":"Paris.png"
+			"question":"Who was the ancient Egyptian queen known for her alliance with Julius Caesar and Mark Antony ?"
+			,"options":["Nefertiti","Hatshepsut","Cleopatra","Ankhesenamun"]
+			,"image":"Cleopatra.png"
 			,"answer":2
-			,"info":"Paris is the capital and most populous city of 'France'. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy."
+			,"info":"Cleopatra VII Thea Philopator (70/69 BC – 10 August 30 BC) was Queen of the Ptolemaic Kingdom of Egypt from 51 to 30 BC, and its last active ruler. Cleopatra's most famous relationship was with Julius Caesar, which was followed by her alliance and romantic involvement with Mark Antony, both pivotal figures in the political landscape of ancient Rome."
 		}
 		,{
-			"question":"What is the most populated city in the world ?"
-			,"options":["Tokyo","Delhi","Shanghai","Mexico City"]
-			,"image":"Tokyo.png"
+			"question":"In which year did the Berlin Wall fall, symbolizing the end of the Cold War ?"
+			,"options":["1991","1989","1993","1975"]
+			,"image":"BerlinWallFall.png"
+			,"answer":1
+			,"info":"The fall of the Berlin Wall on November 9, 1989, during the Peaceful Revolution, marked the destruction of the Berlin Wall and the figurative Iron Curtain. It was one of the series of events that started the fall of communism in Central and Eastern Europe, preceded by the Solidarity Movement in Poland."
+		}
+		,{
+			"question":"Who was the first woman to win a Nobel Prize, honored for her work in physics ?"
+			,"options":["Ada Lovelace","Rosalind Franklin","Emmy Noether","Marie Curie"]
+			,"image":"MarieCurie.png"
+			,"answer":3
+			,"info":"Marie Skłodowska-Curie, a Polish-French physicist and chemist, was the first woman to receive a Nobel Prize and the only woman to receive two Nobel prizes. While studying uranium's rays, she discovered new elements and named them polonium and radium."
+		}
+		,{
+			"question":"Which ancient civilization is known for its impressive network of roads, including the famous Via Appia ?"
+			,"options":["Roman","Greek","Persian","Chinese"]
+			,"image":"RomanRoads.png"
 			,"answer":0
-			,"info":"Tokyo, Japan, is the largest city on Earth, with a population of 37.4 million people, which is over four times the population of New York City, USA."
+			,"info":"Roman road system, outstanding transportation network of the ancient Mediterranean world, extending from Britain to the Tigris-Euphrates river system and from the Danube River to Spain and northern Africa. In all, the Romans built 50,000 miles (80,000 km) of hard-surfaced highway, primarily for military reasons."
+		}
+		,{
+			"question":"Who was the leader of the Indian independence movement known for his nonviolent resistance against British rule ?"
+			,"options":["Jawaharlal Nehru","Subhas Chandra Bose","Mahatma Gandhi","Bhagat Singh"]
+			,"image":"Gandhi.png"
+			,"answer":2
+			,"info":"How Mahatma Gandhi changed political protest. His non-violent resistance helped end British rule in India and has influenced modern civil disobedience movements across the globe."
 		}
 	]
 ,"computers":
     [
 		{
-			"question":"What is the capital city of 'France' ?"
-			,"options":["Bern","Amsterdam","Paris","Marseille"]
-			,"image":"Paris.png"
-			,"answer":2
-			,"info":"Paris is the capital and most populous city of 'France'. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy."
+			"question":"Who is considered the father of modern computer science and artificial intelligence ?"
+			,"options":["Bill Gates","Alan Turing","Steve Jobs","Tim Berners-Lee"]
+			,"image":"AlanTuring.png"
+			,"answer":1
+			,"info":"Alan Turing is considered the father of modern computer science and artificial intelligence. His work during World War II on breaking the German Enigma code using machines laid the foundation for the field of AI."
 		}
 		,{
-			"question":"What is the most populated city in the world ?"
-			,"options":["Tokyo","Delhi","Shanghai","Mexico City"]
-			,"image":"Tokyo.png"
+			"question":"Which computer component is responsible for storing permanent data and programs ?"
+			,"options":["CPU","RAM","HDD","GPU"]
+			,"image":"HDD.png"
+			,"answer":2
+			,"info":"Hard disk drives are physical storage devices that store both permanent and temporary data in different formats, including programs, OSes, device files, photos, etc."
+		}
+		,{
+			"question":"What does CPU stand for in computing ?"
+			,"options":["Computer Programming Unit","Central Processing Unit","Central Power Unit","Computer Peripheral Unit"]
+			,"image":"CPU.png"
+			,"answer":1
+			,"info":"CPU stands for Central Processing Unit. It's like the brain of a computer, handling all the calculations and executing instructions. The CPU is responsible for performing tasks and running programs on your computer. It's a crucial component for the overall performance of your device."
+		}
+		,{
+			"question":"What programming language is often used for creating visual part of web pages and web applications ?"
+			,"options":["Python","Java","C++","JavaScript"]
+			,"image":"JavaScript.png"
+			,"answer":3
+			,"info":"JavaScript has been one of the most popular programming language for web development for years. It's a high-level programming language that is widely used to create interactive and dynamic web applications."
+		}
+		,{
+			"question":"Which company developed the Linux operating system ?"
+			,"options":["Free Software Foundation (FSF)","Apple","Microsoft","Google"]
+			,"image":"Linux.png"
 			,"answer":0
-			,"info":"Tokyo, Japan, is the largest city on Earth, with a population of 37.4 million people, which is over four times the population of New York City, USA."
+			,"info":"Linux, computer operating system created in the early 1990s by Finnish software engineer Linus Torvalds and the Free Software Foundation (FSF). While still a student at the University of Helsinki, Torvalds started developing Linux to create a system similar to MINIX, a UNIX operating system."
 		}
 	]
 }

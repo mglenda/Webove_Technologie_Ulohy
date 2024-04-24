@@ -1,5 +1,6 @@
 var nickname = null;
 
+/*Verifikacia dat v inputoch.*/
 function verify_input(){
     var error_txt = document.getElementById('error');
     var selectedGender = document.querySelector('input[name="gender"]:checked');
@@ -43,6 +44,7 @@ function submit(){
     }
 }
 
+/*Ulozenie nahraneho skore do dat.*/
 function store_data(){
     var correct_answers = sessionStorage.getItem('correctAnswers');
     var total_answers = sessionStorage.getItem('totalAnswers');
@@ -62,6 +64,7 @@ function store_data(){
     window.location.href = 'score_page.html';
 }
 
+/*Pri nacitani stranky sa overuje ci uz bol uzivatel raz zadany, ak ano tak sa data o skore automaticky ulozia.*/
 function on_load(){
     nickname = sessionStorage.getItem('nickName');
     if(nickname){
